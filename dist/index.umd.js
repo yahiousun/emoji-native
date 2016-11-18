@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('babel-runtime/core-js/string/from-code-point')) :
   typeof define === 'function' && define.amd ? define(['babel-runtime/core-js/string/from-code-point'], factory) :
-  (global.emoji-recovery = factory(global._String$fromCodePoint));
+  (global.emojiRecovery = factory(global._String$fromCodePoint));
 }(this, (function (_String$fromCodePoint) { 'use strict';
 
 _String$fromCodePoint = 'default' in _String$fromCodePoint ? _String$fromCodePoint['default'] : _String$fromCodePoint;
