@@ -14,8 +14,8 @@ describe('emojiRecovery', () => {
 
   describe('string parsing', () => {
     it('should replace wrong emoji unicode with native unicode', () => {
-      const greeting = emojiRecovery.parse('Hello\uF601!');
-      expect(greeting).to.be.equal('Hello\uD83D\uDE01!');
+      const faceWithTearsOfJoy = emojiRecovery.parse('Rongcloud return \uf602 as \ud83d\ude02!');
+      expect(faceWithTearsOfJoy).to.be.equal('Rongcloud return \ud83d\ude02 as \ud83d\ude02!');
     });
 
     it('should do nothing', () => {
@@ -27,8 +27,8 @@ describe('emojiRecovery', () => {
   describe('emojiRecovery.convert', () => {
     describe('emojiRecovery.convert.fromCodePoint', () => {
       it('should return native unicode', () => {
-        const greeting = emojiRecovery.convert.fromCodePoint('1F601');
-        expect(greeting).to.be.equal('\uD83D\uDE01');
+        const greeting = emojiRecovery.convert.fromCodePoint('1f601');
+        expect(greeting).to.be.equal('\ud83d\ude01');
       });
 
       it('should return input', () => {
@@ -40,7 +40,7 @@ describe('emojiRecovery', () => {
     describe('emojiRecovery.convert.toCodePoint', () => {
       it('should return hex codepoint', () => {
         const greeting = emojiRecovery.convert.toCodePoint('\uD83D\uDE01');
-        expect(greeting).to.be.equal('1F601');
+        expect(greeting).to.be.equal('1f601');
       });
 
       it('should return input', () => {
@@ -49,8 +49,8 @@ describe('emojiRecovery', () => {
       });
 
       it('should return first character\'s hex codepoint', () => {
-        const wrongInput = emojiRecovery.convert.toCodePoint('\uf601\uDE01');
-        expect(wrongInput).to.be.equal('F601');
+        const wrongInput = emojiRecovery.convert.toCodePoint('\uf601\ude01');
+        expect(wrongInput).to.be.equal('f601');
       });
     });
   });

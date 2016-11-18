@@ -29,6 +29,8 @@ export default {
   // basic utilities / helpers to convert codepoint
   // to native unicode and vice versa
   convert,
+  // wrong emoji unicode regexp
+  regex: WRONG_EMOJI_UNICODE_REGEX,
   /**
    * String replacement for `innerHTML` or server side operations
    *  emojiRecovery.parse(string);

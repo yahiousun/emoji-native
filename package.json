@@ -2,9 +2,9 @@
   "private": true,
   "name": "emoji-recovery",
   "version": "1.0.0",
-  "description": "Correct emoji encoding, i.e. F601 to 1F601",
+  "description": "Correct emoji encoding from some 3rd-party service.\ni.e. Rongcloud javascript client transformed unicode \"1f601\" into \"f601\"",
   "repository": "yahiousun/emoji-recovery",
-  "author": "yahiousun",
+  "author": "yahiousun <yahiousun@gmail.com>",
   "license": "MIT",
   "keywords": [
     "emoji",
@@ -12,6 +12,10 @@
     "unicode",
     "recovery"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yahiousun/emoji-recovery.git"
+  },
   "main": "index.js",
   "jsnext:main": "index.es.js",
   "babel": {

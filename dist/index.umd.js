@@ -7,13 +7,13 @@
 /**
  * Given an codepoint, returns UTF16 surrogate pairs.
  *
- * @param   string  unicode, i.e. '1F601'
+ * @param   string  unicode, i.e. '1f601'
  * @return  string  unicode transformed into utf16 surrogates pair,
- *          i.e. \uD83D\uDE01
+ *          i.e. \ud83d\ude01
  *
  * @example
- *  emojiNative.convert.fromCodePoint('1F601');
- *  // "\uD83D\uDE01"
+ *  emojiNative.convert.fromCodePoint('1f601');
+ *  // "\ud83d\ude01"
  *
  */
 
@@ -21,9 +21,9 @@ function fromCodePoint(input) {
   // convert codepoint to charCode
   var charCode = parseInt(input.toString(16), 16);
   if (charCode >= 0x10000 && charCode <= 0x10FFFF) {
-    var highSurrogate = Math.floor((charCode - 0x10000) / 0x400) + 0xD800;
-    var lowSurrogate = (charCode - 0x10000) % 0x400 + 0xDC00;
-    return String.fromCharCode(highSurrogate) + String.fromCharCode(lowSurrogate);
+    var high = Math.floor((charCode - 0x10000) / 0x400) + 0xD800;
+    var low = (charCode - 0x10000) % 0x400 + 0xDC00;
+    return String.fromCharCode(high) + String.fromCharCode(low);
   }
   return String.fromCharCode(charCode);
 }
@@ -31,26 +31,26 @@ function fromCodePoint(input) {
 /**
  * Given a native native unicode, return hex codepoint.
  *
- * @param   string  native unicode, i.e. '\uD83D\uDE01'
+ * @param   string  native unicode, i.e. '\ud83d\ude01'
  * @return  string  native unicode transformed into hex codepoint,
- *          i.e. 1F601
+ *          i.e. 1f601
  *
  * @example
- *  emojiRecovery.convert.toCodePoint('\uD83D\uDE01');
- *  // "1F601"
+ *  emojiRecovery.convert.toCodePoint('\ud83d\ude01');
+ *  // "1f601"
  *
  */
 
 function toCodePoint(input) {
   if (input.length === 1) {
-    return input.charCodeAt(0).toString(16).toUpperCase();
+    return input.charCodeAt(0).toString(16);
   }
   var high = input.charCodeAt(0);
   var low = input.charCodeAt(1);
   if (high >= 0xD800 && high <= 0xDBFF && low >= 0xDC00 && low <= 0xDFFF) {
-    return ((high - 0xD800) * 0x400 + (low - 0xDC00) + 0x10000).toString(16).toUpperCase();
+    return ((high - 0xD800) * 0x400 + (low - 0xDC00) + 0x10000).toString(16);
   }
-  return high.toString(16).toUpperCase();
+  return high.toString(16);
 }
 
 var convert = {
@@ -86,6 +86,8 @@ var index = {
   // basic utilities / helpers to convert codepoint
   // to native unicode and vice versa
   convert: convert,
+  // wrong emoji unicode regexp
+  regex: WRONG_EMOJI_UNICODE_REGEX,
   /**
    * String replacement for `innerHTML` or server side operations
    *  emojiRecovery.parse(string);
