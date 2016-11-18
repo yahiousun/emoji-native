@@ -1,6 +1,23 @@
 # Emoji Recovery
-Correct emoji encoding from some 3rd-party service.
+Correct emoji encoding from some 3rd-party service.  
 i.e. Rongcloud javascript client transformed unicode "1f601" into "f601"
+
+## Installation
+
+Via [npm](https://www.npmjs.com/):
+
+```sh
+$ npm install --save emoji-recovery
+```
+
+in js
+
+```js
+import emojiRecovery from 'emoji-recovery';
+
+emojiRecovery.parse('Hello \uf601 emoji-recovery!');
+// Hello 😁 emoji-recovery!
+```
 
 ## API
 Following are all the methods exposed in the emojiRecovery namespace.
@@ -39,8 +56,9 @@ emojiRecovery.convert.toCodePoint('\ud83d\ude01');
 Wrong emoji unicode regexp
 
 ```js
-let input = "Rongcloud return \uf602 as \ud83d\ude02"
+let input = 'Rongcloud return \uf602 instead of \ud83d\ude02';
+
 input.replace(WRONG_EMOJI_UNICODE_REGEX,
   char => emojiRecovery.convert.fromCodePoint(65536 + char.charCodeAt(0)));
-// "Rongcloud return \ud83d\ude02 as \ud83d\de02"
+// "Rongcloud return \ud83d\ude02 instead of \ud83d\de02"
 ```

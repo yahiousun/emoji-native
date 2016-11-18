@@ -1,5 +1,5 @@
 ---
-id: getting-started
+id: bsk:getting-started
 title: Getting Started ∙ Emoji Recovery
 ---
 
