@@ -1,8 +1,8 @@
 ---
 id: home
-title: emoji-native ∙ Convert emoji unicode to native unicode and vice versa
+title: Emoji Recovery ∙ Correct emoji encoding
 ---
 
 # Welcome!
 
-Convert emoji unicode to native unicode and vice versa
+Correct emoji encoding from 3rd-party service, i.e. "F601" to "1F601"
