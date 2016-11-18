@@ -22,7 +22,7 @@ const WRONG_EMOJI_UNICODE_REGEX = new RegExp(`[${codepoints
 
 function parse(input) {
   return input.replace(WRONG_EMOJI_UNICODE_REGEX,
-    char => String.fromCodePoint(65536 + char.charCodeAt(0)));
+    char => convert.fromCodePoint(65536 + char.charCodeAt(0)));
 }
 
 export default {

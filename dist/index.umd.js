@@ -1,10 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('babel-runtime/core-js/string/from-code-point')) :
-  typeof define === 'function' && define.amd ? define(['babel-runtime/core-js/string/from-code-point'], factory) :
-  (global.emojiRecovery = factory(global._String$fromCodePoint));
-}(this, (function (_String$fromCodePoint) { 'use strict';
-
-_String$fromCodePoint = 'default' in _String$fromCodePoint ? _String$fromCodePoint['default'] : _String$fromCodePoint;
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global.emojiRecovery = factory());
+}(this, (function () { 'use strict';
 
 /**
  * Given an codepoint, returns UTF16 surrogate pairs.
@@ -80,7 +78,7 @@ var WRONG_EMOJI_UNICODE_REGEX = new RegExp('[' + codepoints.slice().map(function
 
 function parse(input) {
   return input.replace(WRONG_EMOJI_UNICODE_REGEX, function (char) {
-    return _String$fromCodePoint(65536 + char.charCodeAt(0));
+    return convert.fromCodePoint(65536 + char.charCodeAt(0));
   });
 }
 

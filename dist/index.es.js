@@ -1,5 +1,3 @@
-import _String$fromCodePoint from 'babel-runtime/core-js/string/from-code-point';
-
 /**
  * Given an codepoint, returns UTF16 surrogate pairs.
  *
@@ -74,7 +72,7 @@ var WRONG_EMOJI_UNICODE_REGEX = new RegExp('[' + codepoints.slice().map(function
 
 function parse(input) {
   return input.replace(WRONG_EMOJI_UNICODE_REGEX, function (char) {
-    return _String$fromCodePoint(65536 + char.charCodeAt(0));
+    return convert.fromCodePoint(65536 + char.charCodeAt(0));
   });
 }
 

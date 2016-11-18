@@ -1,6 +1,6 @@
 {
   "name": "emoji-recovery",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Correct emoji encoding, i.e. F601 to 1F601",
   "repository": "yahiousun/emoji-recovery",
   "author": "yahiousun",
