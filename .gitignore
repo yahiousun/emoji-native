@@ -35,3 +35,9 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# OS
+.DS_Store
+
+# workspace files are user-specific
+*.sublime-workspace
