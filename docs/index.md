@@ -63,7 +63,7 @@ Wrong emoji unicode regexp
 ```js
 let input = 'Rongcloud return \uf602 instead of \ud83d\ude02';
 
-input.replace(WRONG_EMOJI_UNICODE_REGEX,
+input.replace(emojiRecovery.regex,
   char => emojiRecovery.convert.fromCodePoint(65536 + char.charCodeAt(0)));
 // "Rongcloud return \ud83d\ude02 instead of \ud83d\de02"
 ```

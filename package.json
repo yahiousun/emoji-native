@@ -12,8 +12,7 @@
     "unicode",
     "recovery"
   ],
-  "main": "index.js",
-  "jsnext:main": "index.es.js",
+  "main": "src/index.js",
   "babel": {
     "presets": [
       "latest",

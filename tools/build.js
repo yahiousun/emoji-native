@@ -46,6 +46,12 @@ promise = promise.then(() => {
   delete pkg.scripts;
   delete pkg.eslintConfig;
   delete pkg.babel;
+
+  Object.assign(pkg, {
+    main: 'index.js',
+    'jsnext:main': 'index.es.js',
+  });
+
   fs.writeFileSync('dist/package.json', JSON.stringify(pkg, null, '  '), 'utf-8');
   fs.writeFileSync('dist/LICENSE', fs.readFileSync('LICENSE', 'utf-8'), 'utf-8');
   fs.writeFileSync('dist/README.md', fs.readFileSync('README.md', 'utf-8'), 'utf-8');
