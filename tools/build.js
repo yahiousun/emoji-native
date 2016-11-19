@@ -50,9 +50,11 @@ promise = promise.then(() => {
   Object.assign(pkg, {
     main: 'index.js',
     'jsnext:main': 'index.es.js',
+    typings: 'index.d.ts',
   });
 
   fs.writeFileSync('dist/package.json', JSON.stringify(pkg, null, '  '), 'utf-8');
+  fs.writeFileSync('dist/index.d.ts', fs.readFileSync('typings/index.d.ts', 'utf-8'), 'utf-8');
   fs.writeFileSync('dist/LICENSE', fs.readFileSync('LICENSE', 'utf-8'), 'utf-8');
   fs.writeFileSync('dist/README.md', fs.readFileSync('README.md', 'utf-8'), 'utf-8');
 });

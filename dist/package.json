@@ -1,7 +1,7 @@
 {
   "name": "emoji-recovery",
   "version": "1.0.1",
-  "description": "Correct emoji encoding from some 3rd-party service.\ni.e. Rongcloud javascript client transformed unicode \"1f601\" into \"f601\"",
+  "description": "Correct emoji encoding from some 3rd-party service, i.e. Rongcloud.",
   "repository": "yahiousun/emoji-recovery",
   "author": "yahiousun <yahiousun@gmail.com>",
   "license": "MIT",
@@ -15,5 +15,6 @@
   "dependencies": {
     "babel-runtime": "^6.11.6"
   },
+  "typings": "index.d.ts",
   "jsnext:main": "index.es.js"
 }
