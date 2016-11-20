@@ -39,7 +39,6 @@
     "babel-register": "^6.16.3",
     "bs-html-injector": "^3.0.3",
     "chai": "^4.0.0-canary.1",
-    "codelyzer": "^1.0.0-beta.4",
     "coveralls": "^2.11.14",
     "del": "^2.2.2",
     "eslint": "^3.8.0",
@@ -51,9 +50,10 @@
     "rollup-plugin-babel": "^2.6.1",
     "sinon": "^2.0.0-pre.3"
   },
-  "typings": "./typings/index.d.ts",
+  "typings": "typings/index.d.ts",
   "scripts": {
-    "lint": "eslint src test tools --fix",
+    "lint": "eslint src test tools",
+    "lint:fix": "eslint src test tools --fix",
     "test": "mocha --compilers js:babel-register",
     "test:watch": "mocha --compilers js:babel-register --reporter min --watch",
     "test:cover": "babel-node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha",
